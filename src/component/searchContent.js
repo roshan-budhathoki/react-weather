@@ -13,7 +13,7 @@ const SearchContent = ({cityName}) => {
     const today = new Date();
     const totalHours = [];
     const handleQuery = () => {
-        axios.get(`https://api.weatherapi.com/v1/forecast.json?key=36af6cf8980a4e2b89350235220106&q=${cityname}&days=1&aqi=no&alerts=no`).then(
+        axios.get(`http://api.weatherapi.com/v1/forecast.json?key=36af6cf8980a4e2b89350235220106&q=${cityname}&days=1&aqi=no&alerts=no`).then(
             (res) => {
                 let data = res.data;
                 console.log(data);
@@ -137,19 +137,19 @@ const SearchContent = ({cityName}) => {
                     <h1>{dateYear}</h1>
                     <p>{secondDate}</p>
                 </div>
-                <div className="flex p-5">
-                    <div className="flex justify-center items-center p-2">
+                <div className="flex sm:p-5">
+                    <div className="flex justify-between items-center p-2">
                         <i className="uil uil-search w-5 mr-2 text-xl"></i>
-                        <input type="text" placeholder ="Search for location or city" value={cityname} onChange={(e) => setCityname(e.target.value)} className="border-none bg-slate-100 outline-none text-indigo-500 rounded-lg h-7 w-64 p-5"/>
-                        <button className='bg-blue-500 border-2 text-slate-100 rounded-lg px-4 py-2 ml-2' onClick={handleQuery}>Search</button>
+                        <input type="text" placeholder ="Search for location or city" value={cityname} onChange={(e) => setCityname(e.target.value)} className="border-none bg-slate-100 outline-none text-indigo-500 rounded-lg h-7 sm:w-64 w-52 sm:p-5 p-2"/>
+                        <button className='bg-blue-500 border-2 text-slate-100 rounded-lg sm:px-4 p-1 sm:py-2 sm:ml-2 ml-5' onClick={handleQuery}>Search</button>
                     </div>
                 </div>
             </div>
             <div>
-                <div className="pl-10 mt-5 font-bold mb-5">
+                <div className="sm:pl-10 pl-5 mt-5 font-bold mb-5">
                     Today Overview
                 </div>
-                <div className="grid grid-cols-2 gap-6 pl-10">
+                <div className="grid grid-cols-2 gap-6 sm:pl-10 pl-5 pr-5">
                     <div className="flex bg-slate-100 sm:mr-48 p-5 sm:w-52 w-44">
                         <i className="uil uil-wind w-10 text-2xl"></i>
                         <div>
@@ -180,7 +180,7 @@ const SearchContent = ({cityName}) => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className='ml-12 sm:ml-0 relative h-[40vh] w-[40vh] sm:h-[45vh] sm:w-[60vW]'>
                 <Line 
                     data= {{
                         labels: hours?.map((element) => element.hour),
@@ -208,7 +208,7 @@ const SearchContent = ({cityName}) => {
                         }]
                     }}
                     options={{
-                        maintainAspectRatio: true,
+                        maintainAspectRatio: false,
                         plugins: {
                             title: {
                                 display: true,
@@ -220,7 +220,6 @@ const SearchContent = ({cityName}) => {
                             }
                             }
                         }}
-                    height={200} width={600}
                     />
             </div>
         </div>
