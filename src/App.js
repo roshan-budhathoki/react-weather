@@ -7,7 +7,7 @@ import ProtectUser from './component/protectUser';
 import PreventUser from './component/preventUser';
 function App() {
   const userDetails = JSON.parse(localStorage.getItem("userDetails"));
-  const location = userDetails.location;
+  const location = userDetails?.location;
   return (
     <>
       <Routes>
