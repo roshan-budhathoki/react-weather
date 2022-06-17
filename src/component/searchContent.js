@@ -13,7 +13,7 @@ const SearchContent = ({cityName}) => {
     const today = new Date();
     const totalHours = [];
     const handleQuery = () => {
-        axios.get(`http://api.weatherapi.com/v1/forecast.json?key=36af6cf8980a4e2b89350235220106&q=${cityname}&days=1&aqi=no&alerts=no`).then(
+        axios.get(`https://api.weatherapi.com/v1/forecast.json?key=36af6cf8980a4e2b89350235220106&q=${cityname}&days=1&aqi=no&alerts=no`).then(
             (res) => {
                 let data = res.data;
                 console.log(data);
@@ -69,7 +69,7 @@ const SearchContent = ({cityName}) => {
     const[secondDate, setSecondDate] = useState('');
 
     useEffect(() => {
-        axios.get(`http://api.weatherapi.com/v1/forecast.json?key=36af6cf8980a4e2b89350235220106&q=${cityName}&days=1&aqi=no&alerts=no`).then(
+        axios.get(`https://api.weatherapi.com/v1/forecast.json?key=36af6cf8980a4e2b89350235220106&q=${cityName}&days=1&aqi=no&alerts=no`).then(
             (res) => {
                 let data = res.data;
                 console.log(data);
