@@ -1,0 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.leftContent{
+  background: linear-gradient(to left top, #7788a4, #435f8a );
+}
