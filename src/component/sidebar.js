@@ -5,9 +5,12 @@ const Sidebar = () => {
     const navigate = useNavigate();
     const logoutUser = () => {
         const userDetails = JSON.parse(localStorage.getItem("userDetails"));
-        userDetails?.login = false;
-        localStorage.setItem("userDetails", JSON.stringify(userDetails));
-        navigate('/');
+        if(userDetails){
+            userDetails?.login = false;
+            localStorage.setItem("userDetails", JSON.stringify(userDetails));
+            navigate('/'); 
+        }
+        
     }
     return (
         <>
