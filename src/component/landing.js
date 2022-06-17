@@ -41,13 +41,15 @@ function Landing() {
         }else if(email !== userDetails.email ||  password !== userDetails.password){
             setError('Enter Valid Details')
         }else{
-            userDetails?.login = true;
-            localStorage.setItem("userDetails", JSON.stringify(userDetails));
-            setError('');
-            setEmail('');
-            setPassword('');
-            setLogin(false);
-            navigate('/dashboard');
+            if(userDetails){
+                userDetails.login = true;
+                localStorage.setItem("userDetails", JSON.stringify(userDetails));
+                setError('');
+                setEmail('');
+                setPassword('');
+                setLogin(false);
+                navigate('/dashboard');
+            }
         }
     }
     const loginUi = 
