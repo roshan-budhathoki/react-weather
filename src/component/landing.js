@@ -41,7 +41,7 @@ function Landing() {
         }else if(email !== userDetails.email ||  password !== userDetails.password){
             setError('Enter Valid Details')
         }else{
-            userDetails.login = true;
+            userDetails?.login = true;
             localStorage.setItem("userDetails", JSON.stringify(userDetails));
             setError('');
             setEmail('');
