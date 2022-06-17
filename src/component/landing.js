@@ -76,7 +76,7 @@ function Landing() {
                     <input type="password" value={password} onChange = {(e) => setPassword(e.target.value)} className='rounded-md outline-none py-1 pl-3 w-52' placeholder='Enter your password' required></input>
                 </div>
                 <div className='w-full flex justify-center mt-5'>
-                    <button className='border-2 px-5 outline-none py-1 font-mono hover:text-slate-100 hover:text-xl hover:bg-slate-600 border-slate-500 rounded-lg' onClick={loginUser}> Sign In</button>
+                    <button className='border-2 px-5 outline-none py-1 font-mono hover:text-slate-100 hover:bg-slate-600 border-slate-500 rounded-lg' onClick={loginUser}> Sign In</button>
                 </div>
             </div>
         </div> 
@@ -109,7 +109,7 @@ function Landing() {
                         <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} className='rounded-md outline-none py-1 pl-3 w-52' placeholder='Enter your location' required></input>
                     </div>
                     <div className='w-full flex justify-center mt-5'>
-                        <button className='border-2 px-5 outline-none py-1 font-mono hover:text-slate-100 hover:text-xl hover:bg-slate-600 border-slate-500 rounded-lg' onClick={saveUser}> Sign Up</button>
+                        <button className='border-2 px-5 outline-none py-1 font-mono hover:text-slate-100 hover:bg-slate-600 border-slate-500 rounded-lg' onClick={saveUser}> Sign Up</button>
                     </div>
                 </div>
             </div> 
