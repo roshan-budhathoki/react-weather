@@ -36,21 +36,24 @@ function Landing() {
 
     const loginUser = () => {
         const userDetails = JSON.parse(localStorage.getItem("userDetails"));
-        if(email === '' || password === ''){
-            setError('Fields required')
-        }else if(email !== userDetails.email ||  password !== userDetails.password){
-            setError('Enter Valid Details')
-        }else{
-            if(userDetails){
-                userDetails.login = true;
-                localStorage.setItem("userDetails", JSON.stringify(userDetails));
-                setError('');
-                setEmail('');
-                setPassword('');
-                setLogin(false);
-                navigate('/dashboard');
+        if(userDetails){
+            if(email === '' || password === ''){
+                setError('Fields required')
+            }else if(email !== userDetails.email ||  password !== userDetails.password){
+                setError('Enter Valid Details')
+            }else{
+                    userDetails.login = true;
+                    localStorage.setItem("userDetails", JSON.stringify(userDetails));
+                    setError('');
+                    setEmail('');
+                    setPassword('');
+                    setLogin(false);
+                    navigate('/dashboard');
             }
+        }else{
+            setError('Please register. ')
         }
+        
     }
     const loginUi = 
         <div className='absolute h-screen w-screen overflow-hidden flex justify-center items-center text-slate-700'>
@@ -62,7 +65,7 @@ function Landing() {
                     {error}
                 </div>
                 <div>
-                    <h1 className='w-full mb-2 -mt-2 text-center text-xl font-semibold text-slate-700'>Sign Up</h1>
+                    <h1 className='w-full mb-2 -mt-2 text-center text-xl font-semibold text-slate-700'>Sign In</h1>
                 </div>
                 <div className='pt-2 pb-2'>
                     <p className='pb-2 font-light font-mono'>Enter your email:</p>
