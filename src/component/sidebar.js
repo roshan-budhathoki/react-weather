@@ -6,7 +6,7 @@ const Sidebar = () => {
     const logoutUser = () => {
         const userDetails = JSON.parse(localStorage.getItem("userDetails"));
         if(userDetails){
-            userDetails?.login = false;
+            userDetails.login = false;
             localStorage.setItem("userDetails", JSON.stringify(userDetails));
             navigate('/'); 
         }
